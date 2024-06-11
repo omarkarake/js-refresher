@@ -45,7 +45,8 @@
 // console.log(applesOrangeJuice);
 
 // ---------------------------------------------------------------------------------------
-
+// you can call function declaration before or after declaring function
+// but function expression only be called after creating it.
 // function declaration
 
 function ageCalc1(years) {
