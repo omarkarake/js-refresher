@@ -49,31 +49,47 @@
 // but function expression only be called after creating it.
 // function declaration
 
-function ageCalc1(years) {
-    return 2030 - years;
+// function ageCalc1(years) {
+//     return 2030 - years;
+// }
+
+// console.log(ageCalc1(1991));
+
+// // function expression
+
+// const ageCalc2 = function (years) {
+//     return 2030 - years;
+// }
+
+// console.log(ageCalc2(1991));
+
+// // Arrow functions
+
+// const ageCalc3 = years => 2030 - years;
+// const age3 = ageCalc3(1991);
+// console.log(age3);
+
+// const yearsUntilRetirement = (years, firstName) => {
+//     const age = 2030 - years;
+//     const yearsLeft = 65 - age;
+//     return `${firstName} retires in ${yearsLeft} years`;
+// };
+
+// console.log(yearsUntilRetirement(1991, "bob"));
+// console.log(yearsUntilRetirement(1980, "marley"));
+
+// ------------------------------------------------
+// calling function inside other function
+
+function cutFruitPieces(fruit) {
+    return fruit * 4;
 }
 
-console.log(ageCalc1(1991));
-
-// function expression
-
-const ageCalc2 = function (years) {
-    return 2030 - years;
+function fruitProcessor(apples, oranges) {
+    const applePieces = cutFruitPieces(apples);
+    const orangePieces = cutFruitPieces(oranges);
+    const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange.`;
+    return juice
 }
 
-console.log(ageCalc2(1991));
-
-// Arrow functions
-
-const ageCalc3 = years => 2030 - years;
-const age3 = ageCalc3(1991);
-console.log(age3);
-
-const yearsUntilRetirement = (years, firstName) => {
-    const age = 2030 - years;
-    const yearsLeft = 65 - age;
-    return `${firstName} retires in ${yearsLeft} years`;
-};
-
-console.log(yearsUntilRetirement(1991, "bob"));
-console.log(yearsUntilRetirement(1980, "marley"));
+console.log(fruitProcessor(2, 3));
