@@ -22,24 +22,42 @@
 
 // -------------------------------------------------------------------------------------
 
-function logger() {
-    console.log('my name is Omar');
+// function logger() {
+//     console.log('my name is Omar');
+// }
+
+// // calling / running / invoking
+// logger(); // will log same thing
+// logger(23); // will log same thing
+
+// function fruitProcessor(apples, oranges) {
+//     const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
+//     return juice;
+// }
+
+// const appleJuice = fruitProcessor(4, 0);
+// console.log(appleJuice);
+
+// const orangeJuice = fruitProcessor(0, 5);
+// console.log(orangeJuice);
+
+// const applesOrangeJuice = fruitProcessor(4, 5);
+// console.log(applesOrangeJuice);
+
+// ---------------------------------------------------------------------------------------
+
+// function declaration
+
+function ageCalc1(years) {
+    return 2030 - years;
 }
 
-// calling / running / invoking
-logger(); // will log same thing
-logger(23); // will log same thing
+console.log(ageCalc1(1991));
 
-function fruitProcessor(apples, oranges) {
-    const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
-    return juice;
+// function expression
+
+const ageCalc2 = function (years) {
+    return 2030 - years;
 }
 
-const appleJuice = fruitProcessor(4, 0);
-console.log(appleJuice);
-
-const orangeJuice = fruitProcessor(0, 5);
-console.log(orangeJuice);
-
-const applesOrangeJuice = fruitProcessor(4, 5);
-console.log(applesOrangeJuice);
+console.log(ageCalc2(1991));
