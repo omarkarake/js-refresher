@@ -159,22 +159,75 @@
 // Become problem solver
 // task is temperature amplitude? and ignore error
 
-function returnAmplitude(array) {
-    let max = array[0];
-    let min = array[0];
+// function returnAmplitude(array1, array2) {
+//     const array = [...array1, ...array2];
+//     let max = array[0];
+//     let min = array[0];
+//     for (let i = 0; i < array.length; i++) {
+//         const element = array[i];
+//         if (typeof element === 'number' && element > max) {
+//             max = element;
+//         } else if (typeof element === 'number' && element < min) {
+//             min = element;
+//         } else {
+//             continue;
+//         }
+//     }
+//     return max - min;
+// }
+
+// const temperatures1 = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
+// const temperatures2 = [4, -2, -7, -1, 9, 13, 17, 15, 'error', 14, 30, 5];
+
+// console.log(returnAmplitude(temperatures1, temperatures2));
+
+// PROBLEM 2
+// function should now recieve 2 arrays of temps
+
+// 1) understand the problem
+// -with 2 arrays, should we implement same functionality twice? No! just merge two arrays
+
+// 2) breaking up into sub-problems
+// -how to merge two arrays
+
+
+/////////////////////////////////////////////////
+// Coding challenge #1
+
+/*
+Developer Skills & Editor Setup
+Coding Challenge #1
+Given an array of forecasted maximum temperatures, the thermometer displays a 
+string with the given temperatures. Example: [17, 21, 23] will print "... 17ºC in 1 
+days ... 21ºC in 2 days ... 23ºC in 3 days ..."
+Your tasks:
+1. Create a function 'printForecast' which takes in an array 'arr' and logs a 
+string like the above to the console. Try it with both test datasets.
+2. Use the problem-solving framework: Understand the problem and break it up 
+into sub-problems!
+Test data:
+§ Data 1: [17, 21, 23]
+§ Data 2: [12, 5, -5, 0, 4]
+GOOD LUCK �
+
+*/
+
+// Understand the problem
+// -can i loop through an array and return string like "...17ºC in 1 days" for each iterations
+
+// break it up into sub-problems!
+// create empty string variable
+// loop through array and get the first iteration, str var will be like "...17ºC in 1 days" // we get day 1 on index 0 goes on and on
+
+const printForecast = (array) => {
+    let stringToBeReturned = '';
     for (let i = 0; i < array.length; i++) {
         const element = array[i];
-        if (typeof element === 'number' && element > max) {
-            max = element;
-        } else if (typeof element === 'number' && element < min) {
-            min = element;
-        } else {
-            continue;
-        }
+        stringToBeReturned += `${element}ºC in ${i + 1} days ... `;
     }
-    return max - min;
+    return '...' + stringToBeReturned;
 }
-
-const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
-
-console.log(returnAmplitude(temperatures));
+const data1 = [17, 21, 23];
+const data2 = [12, 5, -5, 0, 4];
+console.log(printForecast(data1));
+console.log(printForecast(data2));
