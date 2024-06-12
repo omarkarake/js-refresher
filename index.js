@@ -111,22 +111,22 @@
 
 // assignment repo /week-0 /challenge1.js /challenge2.js
 
-const jonas = {
-    firstName: 'Jonas',
-    lastName: 'Schemdtmann',
-    birthYear: 1991,
-    job: 'teacher',
-    friends: ['Michael', 'Peter', 'Steven'],
-    hasDriversLicence: true,
-    calcAge: function () {
-        this.age = 2037 - this.birthYear;
-        return this.age;
-    },
-    getSummary: function () {
-        return `${this.firstName} is a ${this.age}-year old teacher, and he has ${this.hasDriversLicence ? 'a' : 'no'} driver's licence`;
-    }
-}
-const nameKey = 'Name';
+// const jonas = {
+//     firstName: 'Jonas',
+//     lastName: 'Schemdtmann',
+//     birthYear: 1991,
+//     job: 'teacher',
+//     friends: ['Michael', 'Peter', 'Steven'],
+//     hasDriversLicence: true,
+//     calcAge: function () {
+//         this.age = 2037 - this.birthYear;
+//         return this.age;
+//     },
+//     getSummary: function () {
+//         return `${this.firstName} is a ${this.age}-year old teacher, and he has ${this.hasDriversLicence ? 'a' : 'no'} driver's licence`;
+//     }
+// }
+// const nameKey = 'Name';
 // where to use the dot notation
 // console.log(jonas.lastName);
 // where to use bracket notation
@@ -151,6 +151,39 @@ const nameKey = 'Name';
 
 // console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`);
 
-console.log(jonas.calcAge());
-console.log(jonas);
-console.log(jonas.getSummary());
+// console.log(jonas.calcAge());
+// console.log(jonas);
+// console.log(jonas.getSummary());
+
+// -----------------------------------------------------
+// Become problem solver
+// task is temperature amplitude? and ignore error
+
+const arrayMax = (array) => {
+    let max = array[0];
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        if (typeof element === 'number' && element > max) {
+            max = element;
+        } else {
+            continue;
+        }
+    }
+    return max;
+}
+
+const arrayMin = (array) => {
+    let min = array[0];
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        if (typeof element === 'number' && element < min) {
+            min = element;
+        } else {
+            continue;
+        }
+    }
+    return min;
+}
+const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
+
+console.log(arrayMax(temperatures) - arrayMin(temperatures));
