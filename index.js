@@ -159,31 +159,22 @@
 // Become problem solver
 // task is temperature amplitude? and ignore error
 
-const arrayMax = (array) => {
+function returnAmplitude(array) {
     let max = array[0];
+    let min = array[0];
     for (let i = 0; i < array.length; i++) {
         const element = array[i];
         if (typeof element === 'number' && element > max) {
             max = element;
-        } else {
-            continue;
-        }
-    }
-    return max;
-}
-
-const arrayMin = (array) => {
-    let min = array[0];
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i];
-        if (typeof element === 'number' && element < min) {
+        } else if (typeof element === 'number' && element < min) {
             min = element;
         } else {
             continue;
         }
     }
-    return min;
+    return max - min;
 }
+
 const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
 
-console.log(arrayMax(temperatures) - arrayMin(temperatures));
+console.log(returnAmplitude(temperatures));
