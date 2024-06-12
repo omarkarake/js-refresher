@@ -97,13 +97,57 @@
 // -------------------------------------------------
 // array challenge
 
-const calcTip = function (bill) {
-    return bill >= 50 && bill >= 300 ? bill * 0.15 : bill * 0.20;
+// const calcTip = function (bill) {
+//     return bill >= 50 && bill >= 300 ? bill * 0.15 : bill * 0.20;
+// }
+
+// const bills = [125, 555, 44];
+// const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+
+// const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+
+// console.log(bills, tips, totals);
+
+
+// assignment repo /week-0 /challenge1.js /challenge2.js
+
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schemdtmann',
+    birthYear: 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicence: true,
+    calcAge: function () {
+        this.age = 2037 - this.birthYear;
+        return this.age;
+    }
 }
+const nameKey = 'Name';
+// where to use the dot notation
+// console.log(jonas.lastName);
+// where to use bracket notation
+// console.log(jonas['first' + nameKey]); // computing the property first
 
-const bills = [125, 555, 44];
-const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+// const interestIn = prompt("What do you want? choose btn firstName, Lastname");
 
-const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+// if (jonas[interestIn]) {
+//     console.log(jonas[interestIn]);
+// } else {
+//     console.log('Wrong request');
+// }
 
-console.log(bill, tips, totals);
+// // adding or altering object property
+
+// jonas.location = 'Portugal';
+// jonas['twitter'] = '@jonasschmedtmann';
+// console.log(jonas);
+
+// challenge
+// "Jonas has 3 friends, and his best friend is called Michael"
+
+// console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`);
+
+console.log(jonas.calcAge());
+console.log(jonas);
+console.log(`Jonas is a ${jonas.age}-year old teacher, and he has ${jonas.hasDriversLicence ? 'a' : 'no'} driver's licence`);
