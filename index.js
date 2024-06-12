@@ -121,6 +121,9 @@ const jonas = {
     calcAge: function () {
         this.age = 2037 - this.birthYear;
         return this.age;
+    },
+    getSummary: function () {
+        return `${this.firstName} is a ${this.age}-year old teacher, and he has ${this.hasDriversLicence ? 'a' : 'no'} driver's licence`;
     }
 }
 const nameKey = 'Name';
@@ -150,4 +153,4 @@ const nameKey = 'Name';
 
 console.log(jonas.calcAge());
 console.log(jonas);
-console.log(`Jonas is a ${jonas.age}-year old teacher, and he has ${jonas.hasDriversLicence ? 'a' : 'no'} driver's licence`);
+console.log(jonas.getSummary());
