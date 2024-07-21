@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // what is strict mode?
 // strict mode is special mode that we can activate in js, which make it easier for us to write secure js code
@@ -108,7 +108,6 @@
 
 // console.log(bills, tips, totals);
 
-
 // assignment repo /week-0 /challenge1.js /challenge2.js
 
 // const jonas = {
@@ -190,7 +189,6 @@
 // 2) breaking up into sub-problems
 // -how to merge two arrays
 
-
 /////////////////////////////////////////////////
 // Coding challenge #1
 
@@ -219,15 +217,63 @@ GOOD LUCK �
 // create empty string variable
 // loop through array and get the first iteration, str var will be like "...17ºC in 1 days" // we get day 1 on index 0 goes on and on
 
-const printForecast = (array) => {
-    let stringToBeReturned = '';
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i];
-        stringToBeReturned += `${element}ºC in ${i + 1} days ... `;
-    }
-    return '...' + stringToBeReturned;
-}
-const data1 = [17, 21, 23];
-const data2 = [12, 5, -5, 0, 4];
-console.log(printForecast(data1));
-console.log(printForecast(data2));
+// const printForecast = (array) => {
+//     let stringToBeReturned = '';
+//     for (let i = 0; i < array.length; i++) {
+//         const element = array[i];
+//         stringToBeReturned += `${element}ºC in ${i + 1} days ... `;
+//     }
+//     return '...' + stringToBeReturned;
+// }
+// const data1 = [17, 21, 23];
+// const data2 = [12, 5, -5, 0, 4];
+// console.log(printForecast(data1));
+// console.log(printForecast(data2));
+
+// -----------------------------------------------
+// // function for calculating value below 40
+// const isBelow = (value) => value < 40;
+
+// // function that return Boolean array for given array element
+// // const returnBooleanArray = (array) => {
+// //   let result = [];
+// //   for(let element of array1){
+// //     result.push(isBelow(element));
+// //   }
+// //   return result;
+// // }
+
+// const array1 = [1, 30, 39, 29, 10, 50];
+// const result = array1.map(isBelow); //most presize way by using map
+// // .map() return array of element that meets certain criteria
+
+// // console.log(returnBooleanArray(array1));
+// console.log(result);
+
+// -----------------------------------------------
+// Gues my number app
+
+// var x = 6;
+
+// let girl = function () {
+//   console.log(x);
+//   var x = 20;
+//   console.log(x);
+// };
+
+// girl();
+
+// -------------------------------------------------------------------------
+const binarySearch = (arr, target) => {
+  let start = 0;
+  let end = arr.length - 1;
+  let middle = Math.floor((start + end) / 2);
+  while (arr[middle] !== target && start <= end) {
+    if (target < arr[middle]) end = middle - 1;
+    else start = middle + 1;
+    middle = Math.floor((start + end) / 2);
+  }
+  return arr[middle] === target ? middle : -1;
+};
+
+console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 5));
