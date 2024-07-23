@@ -268,7 +268,10 @@ GOOD LUCK �
 //   let start = 0;
 //   let end = arr.length - 1;
 //   let middle = Math.floor((start + end) / 2);
+
+//   console.log(start, middle, end, "target: ", target)
 //   while (arr[middle] !== target && start <= end) {
+//     console.log(start, middle, end)
 //     if (target < arr[middle]) end = middle - 1;
 //     else start = middle + 1;
 //     middle = Math.floor((start + end) / 2);
@@ -276,24 +279,63 @@ GOOD LUCK �
 //   return arr[middle] === target ? middle : -1;
 // };
 
-// console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 5));
+// console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
 
 // -----------------------------------------------------------------
-const naiveSearchString = (longString, shortString) => {
-  let count = 0;
-  for (let i = 0; i < longString.length; i++) {
-    for (let j = 0; j < shortString.length; j++) {
-      console.log(longString[i + j], shortString[j]);
-      if(longString[i + j] !== shortString[j]){
-        console.log('break!', longString[i + j], shortString[j]);
-        break;
-      }else if(j === shortString.length - 1){
-        count++;
-        console.log('found one!');
+// const naiveSearchString = (longString, shortString) => {
+//   let count = 0;
+//   for (let i = 0; i < longString.length; i++) {
+//     for (let j = 0; j < shortString.length; j++) {
+//       console.log(longString[i + j], shortString[j]);
+//       if(longString[i + j] !== shortString[j]){
+//         console.log('break!', longString[i + j], shortString[j]);
+//         break;
+//       }else if(j === shortString.length - 1){
+//         count++;
+//         console.log('found one!');
+//       }
+//     }
+//   }
+//   return count;
+// };
+
+// console.log(naiveSearchString("lorie lolied", "ie"));
+// -------------------------------------------------------------
+// const swap = (arr, idx1, idx2) => {[arr[idx1], idx2] = [arr[idx2], arr[idx1]]};
+
+// bubble sort
+// function bubbleSort(arr) {
+//   for (let i = arr.length; i > 0; i--) {
+//     for (let j = 0; j < i - 1; j++) {
+//       console.log(arr, arr[j], arr[j + 1]);
+//       if (arr[j] > arr[j + 1]) {
+//         let temp = arr[j];
+//         arr[j] = arr[j + 1];
+//         arr[j + 1] = temp;
+//       }
+//     }
+//     console.log("one pass complete!");
+//   }
+//   return arr;
+// }
+
+// console.log("returned: ", bubbleSort([3, 5, 6, 72, -5, 1, 2]));
+
+// bubble sort
+function bubbleSort(arr) {
+  const swap = (arr, idx1, idx2) => {
+    [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+  };
+  for (let i = arr.length; i > 0; i--) {
+    for (let j = 0; j < i - 1; j++) {
+      console.log(arr, arr[j], arr[j + 1]);
+      if (arr[j] > arr[j + 1]) {
+        swap(arr, j, j + 1);
       }
     }
+    console.log("one pass complete!");
   }
-  return count;
-};
+  return arr;
+}
 
-console.log(naiveSearchString("lorie lolied", "ie"));
+console.log("returned: ", bubbleSort([3, 5, 6, 72, -5, 1, 2]));
