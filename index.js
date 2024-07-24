@@ -467,3 +467,29 @@ GOOD LUCK �
 // }
 // console.log(insertionSort([5, 3, 1, 3, 4]));
 
+function mergeSortedArray(arr1, arr2) {
+  let result = [];
+  let i = 0;
+  let j = 0;
+  while (i < arr1.length && j < arr2.length) {
+    if (arr1[i] < arr2[j]) {
+      result.push(arr1[i]);
+      i++;
+    } else {
+      result.push(arr2[j]);
+      j++;
+    }
+  }
+  while (i < arr1.length) {
+    result.push(arr1[i]);
+    i++;
+  }
+  while (j < arr2.length) {
+    result.push(arr2[j]);
+    j++;
+  }
+  return result;
+}
+console.log(mergeSortedArray([10, 11, 50], [2, 5, 20, 30, 40, 60, 70]));
+
+// [1, 11, 50], [2, 5, 20, 30];
