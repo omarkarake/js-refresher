@@ -366,17 +366,104 @@ GOOD LUCK �
 // console.log(selectionSort([5, 3, 4, 1, 2]));
 // ------------------------------------------------
 // insertion sort
-function insertionSort(arr) {
-  for (let i = 1; i < arr.length; i++) {
-    let currentVal = arr[i];
-    let j;
-    for (j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
-      arr[j + 1] = arr[j];
-    }
-    arr[j + 1] = currentVal;
-  }
-  return arr;
-}
+// function insertionSort(arr) {
+//   for (let i = 1; i < arr.length; i++) {
+//     let currentVal = arr[i];
+//     let j;
+//     for (j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
+//       arr[j + 1] = arr[j];
+//     }
+//     arr[j + 1] = currentVal;
+//   }
+//   return arr;
+// }
 
-console.log(insertionSort([5, 3, 4, 1, 2]));
+// console.log(insertionSort([5, 3, 4, 1, 2]));
+
+// binary practice
+// function binarySearch(arr, target){
+//   let start = 0;
+//   let end = arr.length - 1;
+//   let middle = Math.floor((start + end) / 2);
+//   while (arr[middle] !== target && start <= end) {
+//     if (target < arr[middle]) {
+//       end = middle - 1;
+//     }else{
+//       start = end + 1;
+//     }
+//     middle = Math.floor((start + end) / 2);
+//   }
+//   return arr[middle] === target ? middle : -1;
+// }
+
+// console.log(binarySearch([1,2,3,4,5], 2));
+
+// naive string search practice
+// function stringSearch(long, short) {
+//   let count = 0;
+//   for (let i = 0; i < long.length; i++) {
+//     for (let j = 0; j < short.length; j++) {
+//       if (long[i + j] !== short[j]) {
+//         // looking ahead
+//         break;
+//       } else if (j === short.length - 1) {
+//         count++;
+//       }
+//     }
+//   }
+//   return count;
+// }
+
+// console.log(stringSearch("omarionaonthebe", "on"));
+
+// bubble sort
+// function bubbleSort(arr) {
+//   let noSwap;
+//   for (let i = arr.length - 1; i >= 0; i--) {
+//     noSwap = true;
+//     for (let j = 0; j < i - 1; j++) {
+//       if (arr[j] > arr[j + 1]) {
+//         let temp = arr[j];
+//         arr[j] = arr[j + 1];
+//         arr[j + 1] = temp;
+//       }
+//       noSwap = false;
+//     }
+//   }
+//   return arr;
+// }
+
+// console.log(bubbleSort([5, 3, 1, 3, 4]));
+
+//selection sort practicce
+// function selectionSort(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     let smallest = i;
+//     for (let j = i + 1; j < arr.length; j++) {
+//       if (arr[j] < arr[smallest]) {
+//         smallest = j;
+//       }
+//     }
+//     if (i !== smallest) {
+//       let temp = arr[i];
+//       arr[i] = arr[smallest];
+//       arr[smallest] = temp;
+//     }
+//   }
+//   return arr;
+// }
+// console.log(selectionSort([5, 3, 1, 3, 4]));
+
+// function insertionSort(arr) {
+//   for (let i = 1; i < arr.length; i++) {
+//     let currentVal = arr[i];
+//     let j;
+//     for (j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
+//       arr[j + 1] = arr[j];
+//     }
+//     arr[j + 1] = currentVal;
+//   }
+//   return arr;
+// }
+// console.log(insertionSort([5, 3, 1, 3, 4]));
 
