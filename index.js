@@ -490,6 +490,15 @@ function mergeSortedArray(arr1, arr2) {
   }
   return result;
 }
-console.log(mergeSortedArray([10, 11, 50], [2, 5, 20, 30, 40, 60, 70]));
+// console.log(mergeSortedArray([10, 11, 50], [2, 5, 20, 30, 40, 60, 70]));
 
-// [1, 11, 50], [2, 5, 20, 30];
+// merge sort
+function mergeSort(arr) {
+  if (arr.length <= 1) return arr;
+  let mid = Math.floor(arr.length / 2);
+  let left = mergeSort(arr.slice(0, mid));
+  let right = mergeSort(arr.slice(mid));
+  return mergeSortedArray(left, right);
+}
+
+console.log(mergeSort([5, 2, 1, 2, 3]));
