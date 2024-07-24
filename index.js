@@ -467,38 +467,72 @@ GOOD LUCK �
 // }
 // console.log(insertionSort([5, 3, 1, 3, 4]));
 
-function mergeSortedArray(arr1, arr2) {
-  let result = [];
-  let i = 0;
-  let j = 0;
-  while (i < arr1.length && j < arr2.length) {
-    if (arr1[i] < arr2[j]) {
-      result.push(arr1[i]);
-      i++;
-    } else {
-      result.push(arr2[j]);
-      j++;
-    }
-  }
-  while (i < arr1.length) {
-    result.push(arr1[i]);
-    i++;
-  }
-  while (j < arr2.length) {
-    result.push(arr2[j]);
-    j++;
-  }
-  return result;
-}
+// function mergeSortedArray(arr1, arr2) {
+//   let result = [];
+//   let i = 0;
+//   let j = 0;
+//   while (i < arr1.length && j < arr2.length) {
+//     if (arr1[i] < arr2[j]) {
+//       result.push(arr1[i]);
+//       i++;
+//     } else {
+//       result.push(arr2[j]);
+//       j++;
+//     }
+//   }
+//   while (i < arr1.length) {
+//     result.push(arr1[i]);
+//     i++;
+//   }
+//   while (j < arr2.length) {
+//     result.push(arr2[j]);
+//     j++;
+//   }
+//   return result;
+// }
 // console.log(mergeSortedArray([10, 11, 50], [2, 5, 20, 30, 40, 60, 70]));
 
 // merge sort
-function mergeSort(arr) {
-  if (arr.length <= 1) return arr;
-  let mid = Math.floor(arr.length / 2);
-  let left = mergeSort(arr.slice(0, mid));
-  let right = mergeSort(arr.slice(mid));
-  return mergeSortedArray(left, right);
+// function mergeSort(arr) {
+//   if (arr.length <= 1) return arr;
+//   let mid = Math.floor(arr.length / 2);
+//   let left = mergeSort(arr.slice(0, mid));
+//   let right = mergeSort(arr.slice(mid));
+//   return mergeSortedArray(left, right);
+// }
+
+// console.log(mergeSort([5, 2, 1, 2, 3]));
+
+// pivot
+
+function pivot(arr, start = 0, end = arr.length - 1) {
+  function swap(arr, i, j) {
+    let temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+  }
+  let pivot = arr[start];
+  let swapIdx = start;
+
+  for (let i = start + 1; i <= end; i++) {
+    if (pivot > arr[i]) {
+      swapIdx++;
+      swap(arr, swapIdx, i);
+    }
+  }
+  swap(arr, start, swapIdx);
+  return swapIdx;
 }
 
-console.log(mergeSort([5, 2, 1, 2, 3]));
+function quickSort(arr, left = 0, right = arr.length - 1) {
+  if (left < right) {
+    let pivotIndex = pivot(arr, left, right);
+    // left
+    quickSort(arr, left, pivotIndex - 1);
+    // right
+    quickSort(arr, pivotIndex + 1, right);
+  }
+  return arr;
+}
+
+console.log(quickSort([5, 1, 3, 2, 4]))
